@@ -1,62 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website with Links</title>
-    <style>
-        /* Basic page styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Monitoring Kualitas Air</title>
+  
+  <!-- CSS ditulis langsung di dalam tag <style> -->
+  <style>
+    /* General Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        h1 {
-            color: #2c3e50;
-        }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
 
-        p {
-            margin-bottom: 10px;
-        }
+    /* Container */
+    .container {
+      width: 360px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Link styling */
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    /* Header */
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
 
-        a:hover {
-            color: #ff4500;
-        }
+    .header-content {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 40px;
+    }
 
-        /* List styling */
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-    </style>
+    /* Main Content */
+    main {
+      padding: 20px;
+      background-color: #e6f0fa;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .status-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+
+    .status-icon {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .status-icon div {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ffcc00;
+    }
+
+    .status-icon .active {
+      width: 30px;
+      height: 30px;
+      border: 3px solid #000000;
+    }
+
+    .status-text {
+      font-size: 14px;
+    }
+
+    .chart-container {
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      margin-top: 15px;
+    }
+
+    .chart-placeholder {
+      width: 100%;
+      height: 100px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 12px;
+    }
+
+    /* Button */
+    .refresh-button {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .refresh-button:hover {
+      background-color: #218838;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Test membuat Website RTC</h1>
-    <p>Kelompok 9 TRKBA C, Codeditulis dengan ChatGPT, sedang menunggu Cooldown 4.0:</p>
-    
-    <!-- List of links -->
-    <ul>
-        <li><a href="https://www.google.com" target="_blank">Visit Google</a></li>
-        <li><a href="https://www.github.com" target="_blank">Explore GitHub</a></li>
-    </ul>
 
-    <!-- Inline link example -->
-    <p>
-        Bisa cek <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> untuk info lebih lanjut
-    </p>
+  <div class="container">
+    <header>
+      <div class="profile-icon"></div>
+      <div class="header-content">
+        ClearCheck <br> <br>
+        Kost HKPK <br>
+        Menur III NO.19
+      </div>
+    </header>
 
-    <!-- Footer -->
+    <main>
+      <div class="section-title">Kondisi Air</div>
+      <div class="status-container">
+        <div class="status-icon">
+          <div class="active" style="background-color: #ff8800;"></div>
+          <div style="background-color: #ffcc00;"></div>
+          <div style="background-color: #1d64a5;"></div>
+          <div style="background-color: #9bb2d6;"></div>
+        </div>
+        <div class="status-text">Kondisi Air Keruh</div>
+      </div>
+
+      <div class="section-title">Pompa</div>
+      <div class="status-container">
+        <div class="status-icon">
+          <div class="active" style="background-color: #ff8800;"></div>
+          <div style="background-color: #1d64a5;"></div>
+        </div>
+        <div class="status-text">Pompa Menyala</div>
+      </div>
+
+      <div class="section-title">Grafik</div>
+      <div class="chart-container">
+        <div class="chart-placeholder">Grafik Placeholder</div>
+      </div>
+
+      <button class="refresh-button">Segarkan Data</button>
+    </main>
+
     <footer>
-        <p>&copy;  Copyright2024. All Rights Reserved, Web didukung oleh Github.</p>
+      <p>&copy; Kelompok 9 TRKBA C 2022</p>
     </footer>
+  </div>
+
 </body>
 </html>
